@@ -474,95 +474,95 @@ std::string RandomNumberString(size_t size)
 }
 
 int main() {
-    clock_t start, end;
-    std::string s1, s2, s3;
-    char op;
+    // clock_t start, end;
+    // std::string s1, s2, s3;
+    // char op;
 
-    s1 = RandomNumberString(100000);
-    s2 = RandomNumberString(200000);
-    s3 = RandomNumberString(300000);
+    // s1 = RandomNumberString(100000);
+    // s2 = RandomNumberString(200000);
+    // s3 = RandomNumberString(300000);
 
-    std::string ss = RandomNumberString(9000);
+    // std::string ss = RandomNumberString(9000);
 
-    TBigInt n1(s3), n2(ss);
-    start = clock();
+    // TBigInt n1(s3), n2(ss);
+    // start = clock();
 
-    TBigInt a;
-    TBigInt nn1(s3), nn2(ss);
-    a = nn1 / nn2;
+    // TBigInt a;
+    // TBigInt nn1(s3), nn2(ss);
+    // a = nn1 / nn2;
 
-    end = clock();
-    std::cout << " C++ time: " << (double)(end - start) / CLOCKS_PER_SEC << " sec." << std::endl;
-    start = clock();
+    // end = clock();
+    // std::cout << " C++ time: " << (double)(end - start) / CLOCKS_PER_SEC << " sec." << std::endl;
+    // start = clock();
 
-    TBigInt as = a.FastDivide(n1, n2);
+    // TBigInt as = a.FastDivide(n1, n2);
 
-    end = clock();
-    std::cout << "C++ time: " << (double)(end - start) / CLOCKS_PER_SEC << " sec." << std::endl;
+    // end = clock();
+    // std::cout << "C++ time: " << (double)(end - start) / CLOCKS_PER_SEC << " sec." << std::endl;
 
 
-    // std::string s1, s2;
-    // char operand;
-    // while (std::cin >> s1 >> s2 >> operand) {
-    //     TBigInt n1(s1);
-    //     TBigInt n2(s2);
-    //     switch (operand) {
-    //     case '+':
-    //         std:: cout << n1 + n2 << '\n';
-    //         break;
-    //     case '-':
-    //         if (n1 < n2) {
-    //             std::cout << "Error" << '\n';
-    //         } else {
-    //             std::cout << n1 - n2 << '\n';
-    //         }
-    //         break;
-    //     case '*':
-    //         std::cout << n1 * n2 << '\n';
-    //         break;
-    //     case '/':
-    //         if (n2 == TBigInt(0)) {
-    //              std::cout << "Error" << '\n';
-    //         } else {
-    //             TBigInt tmp;
-    //             std::cout << tmp.FastDivide(n1, n2)  << '\n';
-    //         }
-    //         break;
-    //     case '^':
-    //         if (n1 == TBigInt(0)) {
-    //             if (n2 == TBigInt(0)) {
-    //                 std::cout << "Error" << '\n';
-    //             } else {
-    //                 std::cout << "0" << '\n';
-    //             }
-    //         } else if (n1 == TBigInt(1)) {
-    //             std::cout << "1" << '\n';
-    //         } else {
-    //             std::cout << n1.Pow(s2) << '\n';
-    //         }
-    //         break;
-    //     case '>':
-    //         if (n1 > n2) {
-    //             std::cout << "true" << '\n';
-    //         } else {
-    //             std::cout << "false" << '\n';
-    //         }
-    //         break;
-    //     case '<':
-    //         if (n1 < n2) {
-    //             std::cout << "true" << '\n';
-    //         } else {
-    //             std::cout << "false" << '\n';
-    //         }
-    //         break;
-    //     case '=':
-    //         if (n1 == n2) {
-    //             std::cout << "true" << '\n';
-    //         } else {
-    //             std::cout << "false" << '\n';
-    //         }
-    //         break;
-    //     }
-    // }
+    std::string s1, s2;
+    char operand;
+    while (std::cin >> s1 >> s2 >> operand) {
+        TBigInt n1(s1);
+        TBigInt n2(s2);
+        switch (operand) {
+        case '+':
+            std:: cout << n1 + n2 << '\n';
+            break;
+        case '-':
+            if (n1 < n2) {
+                std::cout << "Error" << '\n';
+            } else {
+                std::cout << n1 - n2 << '\n';
+            }
+            break;
+        case '*':
+            std::cout << n1 * n2 << '\n';
+            break;
+        case '/':
+            if (n2 == TBigInt(0)) {
+                 std::cout << "Error" << '\n';
+            } else {
+                TBigInt tmp;
+                std::cout << tmp.FastDivide(n1, n2)  << '\n';
+            }
+            break;
+        case '^':
+            if (n1 == TBigInt(0)) {
+                if (n2 == TBigInt(0)) {
+                    std::cout << "Error" << '\n';
+                } else {
+                    std::cout << "0" << '\n';
+                }
+            } else if (n1 == TBigInt(1)) {
+                std::cout << "1" << '\n';
+            } else {
+                std::cout << n1.Pow(s2) << '\n';
+            }
+            break;
+        case '>':
+            if (n1 > n2) {
+                std::cout << "true" << '\n';
+            } else {
+                std::cout << "false" << '\n';
+            }
+            break;
+        case '<':
+            if (n1 < n2) {
+                std::cout << "true" << '\n';
+            } else {
+                std::cout << "false" << '\n';
+            }
+            break;
+        case '=':
+            if (n1 == n2) {
+                std::cout << "true" << '\n';
+            } else {
+                std::cout << "false" << '\n';
+            }
+            break;
+        }
+    }
     return 0;
 }
